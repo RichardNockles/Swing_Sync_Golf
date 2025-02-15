@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://dciwvpqp31lso"]
+
+[ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_g7hjl"]
+[ext_resource type="PackedScene" uid="uid://dccqh6k1jsnik" path="res://Scenes/GolfBall/GolfBall.tscn" id="2_xgtbf"]
+[ext_resource type="PackedScene" uid="uid://b6ke5q8pm61g1" path="res://Scenes/Course/Course.tscn" id="3_v47qf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_imiau"]
+
+[sub_resource type="Sky" id="Sky_r1k5g"]
+sky_material = SubResource("ProceduralSkyMaterial_imiau")
+
+[sub_resource type="Environment" id="Environment_na4le"]
+background_mode = 2
+sky = SubResource("Sky_r1k5g")
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("hole_start_positions")]
+script = ExtResource("1_g7hjl")
+ball_scene = ExtResource("2_xgtbf")
+hole_start_positions = [NodePath("Hole1Start"), NodePath("Hole2Start")]
+
+[node name="Course_Mesh" parent="." instance=ExtResource("3_v47qf")]
+
+[node name="Hole1Start" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211.842, -1.57143, -184.995)
+
+[node name="Hole2Start" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4962, 2.96597, 46.6855)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_na4le")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PowerBar" type="TextureProgressBar" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
