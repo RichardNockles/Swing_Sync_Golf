@@ -32,6 +32,44 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"Fairway_01": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Fairway1Material.tres"
+},
+"Fairway_02": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Fairway2Material.tres"
+},
+"Fringe": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Fringe1material.tres"
+},
+"Fringe_2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Fringe2material.tres"
+},
+"Green": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/GreenMaterial.tres"
+},
+"High Ground": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/RoughMaterial.tres"
+},
+"Sand": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/SandMaterial.tres"
+},
+"Water": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/WaterMaterial.tres"
+},
+"Waters Edge": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/WatersEdgematerial.tres"
+}
+},
 "nodes": {
 "PATH:Course": {
 "generate/physics": true,

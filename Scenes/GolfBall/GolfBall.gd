@@ -19,6 +19,9 @@ func _ready():
     print("🏌️ Golf Ball Ready!")
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
     freeze = false
+    # Initial camera setup (still needed)
+    ball_camera.global_transform.origin = global_transform.origin + Vector3(0, camera_height, -camera_distance)
+    ball_camera.look_at(global_transform.origin, Vector3.UP)
 
 func _unhandled_input(event):
     if is_aiming:
@@ -43,7 +46,7 @@ func _physics_process(_delta):
             is_aiming = true
             Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-        # Camera follow
+        # Camera follow *ONLY WHILE MOVING*
         ball_camera.global_transform.origin = global_transform.origin + Vector3(0, camera_height, -camera_distance)
         ball_camera.look_at(global_transform.origin, Vector3.UP)
 

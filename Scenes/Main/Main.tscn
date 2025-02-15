@@ -11,7 +11,9 @@ sky_material = SubResource("ProceduralSkyMaterial_imiau")
 
 [sub_resource type="Environment" id="Environment_na4le"]
 background_mode = 2
+background_energy_multiplier = 2.0
 sky = SubResource("Sky_r1k5g")
+tonemap_mode = 2
 
 [node name="Main" type="Node3D" node_paths=PackedStringArray("hole_start_positions")]
 script = ExtResource("1_g7hjl")
