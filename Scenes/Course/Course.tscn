@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6ke5q8pm61g1"]
+[gd_scene load_steps=8 format=3 uid="uid://b6ke5q8pm61g1"]
 
 [ext_resource type="PackedScene" uid="uid://cadji20xtw8t3" path="res://Assets/3D/Environment/Course_Mesh.glb" id="1_smm2x"]
 
@@ -10,12 +10,16 @@ height = 0.2
 radius = 0.2
 
 [sub_resource type="BoxMesh" id="BoxMesh_kheb1"]
-size = Vector3(5, 0.86, 9.27)
+size = Vector3(5, 1, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s886y"]
 albedo_color = Color(0.191651, 0.743241, 0.207211, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tekuh"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_h4k4e"]
+size = Vector3(5, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gf33b"]
+size = Vector3(5, 1, 10)
 
 [node name="Course_Mesh" instance=ExtResource("1_smm2x")]
 
@@ -34,15 +38,15 @@ mesh = SubResource("SphereMesh_pon16")
 shape = SubResource("SphereShape3D_y28hh")
 
 [node name="TeeBox_01" type="MeshInstance3D" parent="." index="3"]
-transform = Transform3D(0.909454, 0, -0.415805, 0, 1, 0, 0.415805, 0, 0.909454, 212.953, -2.00658, -187.315)
+transform = Transform3D(0.909454, 0, -0.415805, 0, 1, 0, 0.415805, 0, 0.909454, 212.953, -2.42072, -187.315)
 mesh = SubResource("BoxMesh_kheb1")
 surface_material_override/0 = SubResource("StandardMaterial3D_s886y")
 
 [node name="TeeBoxCollider_01" type="StaticBody3D" parent="TeeBox_01" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeeBox_01/TeeBoxCollider_01" index="0"]
-transform = Transform3D(5, 0, -2.38419e-07, 0, 1, 0, 0, 0, 9.8, 0, -0.061007, 0)
-shape = SubResource("BoxShape3D_tekuh")
+transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 0, 0.409137, 0)
+shape = SubResource("BoxShape3D_h4k4e")
 
 [node name="TeeBox_02" type="MeshInstance3D" parent="." index="4"]
 transform = Transform3D(0.8566, 0, -0.51598, 0, 1, 0, 0.51598, 0, 0.8566, 20.3283, 2.53493, 45.0692)
@@ -52,5 +56,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s886y")
 [node name="TeeBoxCollider_01" type="StaticBody3D" parent="TeeBox_02" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeeBox_02/TeeBoxCollider_01" index="0"]
-transform = Transform3D(5, 0, -2.38419e-07, 0, 1, 0, 0, 0, 9.8, 0, -0.061007, 0)
-shape = SubResource("BoxShape3D_tekuh")
+shape = SubResource("BoxShape3D_gf33b")
